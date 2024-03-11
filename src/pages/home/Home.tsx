@@ -6,17 +6,15 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Home.css";
+import { Movie } from "../../types/Movie";
 
-interface Movie {
-  id: string;
-  title: string;
-  overview: string;
-}
 
 function Home() {
   const [movies, setMovies] = useState<Movie[] | null>([]);
+  const imageUrl = "https://media.themoviedb.org/t/p/w94_and_h141_bestv2";
+  
 
-  useEffect(() => {
+  useEffect(() => {    
     const fetchMovies = async () => {
       try {
         const response: AxiosResponse<any> = await axios.get(
@@ -30,7 +28,6 @@ function Home() {
           }
         );
         const data: Movie[] = response.data.results;
-        console.log(data, "data");
         setMovies(data);
       } catch (error) {
         console.error(error);
@@ -46,7 +43,7 @@ function Home() {
           movies.map((movie) => (
             <Col key={movie.id}>
               <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src="" />
+                <Card.Img variant="top" src={`${imageUrl}/${movie.poster_path}`} />
                 <Card.Body>
                   <Card.Title>{movie.title}</Card.Title>
                   <Card.Text>{movie.overview}</Card.Text>
