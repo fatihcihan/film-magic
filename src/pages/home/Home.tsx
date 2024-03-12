@@ -13,6 +13,9 @@ function Home() {
   const [movies, setMovies] = useState<Movie[] | null>([]);
   const imageUrl = "https://media.themoviedb.org/t/p/w94_and_h141_bestv2";
 
+  const apiKey = process.env.REACT_APP_API_KEY;
+  const accessToken = process.env.REACT_APP_API_ACCESS_TOKEN;
+
   useEffect(() => {
     const fetchMovies = async () => {
       try {
@@ -21,8 +24,7 @@ function Home() {
           {
             headers: {
               Accept: "application/json",
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYjE2YjdiY2Y5ODlhOTU4YmUxZTZlOWI2MTU4MDRhYiIsInN1YiI6IjY0MjRiNjZiYzk5ODI2MDBiNjAwMWNlYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dqNPCxMi4kDfz7NQVV1287oeLEJqlKoAWHDyksGEUfU",
+              Authorization: `Bearer ${accessToken}`,
             },
           }
         );
