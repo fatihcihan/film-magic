@@ -8,11 +8,12 @@ import Col from "react-bootstrap/Col";
 import "./Home.css";
 import { Movie } from "../../types/Movie";
 import { Link } from "react-router-dom";
+import MovieCard from "../../components/MovieCard";
 
 function Home() {
   const [movies, setMovies] = useState<Movie[] | null>([]);
-  const imageUrl = "https://media.themoviedb.org/t/p/w94_and_h141_bestv2";
 
+  const imageUrl = process.env.REACT_APP_IMAGE_URL;
   const apiKey = process.env.REACT_APP_API_KEY;
   const accessToken = process.env.REACT_APP_API_ACCESS_TOKEN;
 
@@ -39,27 +40,9 @@ function Home() {
 
   return (
     <Container>
-      <Row>
+      <Row lg={4}>
         {movies &&
-          movies.map((movie) => (
-            <Col key={movie.id}>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img
-                  variant="top"
-                  src={`${imageUrl}/${movie.poster_path}`}
-                />
-                <Card.Body>
-                  <Card.Title>{movie.title}</Card.Title>
-                  <Card.Text>{movie.overview}</Card.Text>
-                  <Link to="test">
-                    <Button variant="outline-primary" size="lg">
-                      Details
-                    </Button>
-                  </Link>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
+          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </Row>
     </Container>
   );
