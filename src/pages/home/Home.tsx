@@ -40,7 +40,10 @@ function Home() {
 
   return (
     <Container>
-      <Row lg={4}>{movies && movies.map((movie) => <MovieCard movie={movie} />)}</Row>
+      <Row lg={4}>
+        {movies &&
+          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+      </Row>
     </Container>
   );
 }
