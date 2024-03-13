@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import "./Home.css";
 import { Movie } from "../../types/Movie";
 import MovieCard from "../../components/MovieCard";
+import Search from "../../components/Search";
 
 function Home() {
   const [movies, setMovies] = useState<Movie[] | null>([]);
@@ -36,6 +37,7 @@ function Home() {
 
   return (
     <Container>
+      <Search />
       <Row lg={4}>
         {movies &&
           movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
