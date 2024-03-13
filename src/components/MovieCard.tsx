@@ -13,7 +13,7 @@ function MovieCard(props: { movie: Movie }) {
       <Card.Body>
         <Card.Title>{movie.title}</Card.Title>
         <Card.Text>{movie.overview}</Card.Text>
-        <Link to="test">
+        <Link to={`/details/${movie.id}`}>
           <Button variant="outline-primary" size="lg">
             Details
           </Button>
