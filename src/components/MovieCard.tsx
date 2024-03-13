@@ -8,7 +8,7 @@ function MovieCard(props: { movie: Movie }) {
   const { movie } = props;
 
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "18rem", margin:'0 18px' }} >
       <Card.Img variant="top" src={`${imageUrl}/${movie.poster_path}`} />
       <Card.Body>
         <Card.Title>{movie.title}</Card.Title>
