@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 
-function CustomNavbar() {
+const CustomNavbar: React.FC = () => {
   return (
     <Navbar sticky="top" expand="lg" className="navbar-custom">
       <Container>
@@ -36,6 +36,6 @@ function CustomNavbar() {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default CustomNavbar;
