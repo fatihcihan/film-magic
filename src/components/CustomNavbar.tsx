@@ -1,11 +1,12 @@
 import Container from "react-bootstrap/Container";
+import "./CustomNavbar.css";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 
 function CustomNavbar() {
   return (
-    <Navbar sticky="top" expand="lg" className="bg-body-tertiary">
+    <Navbar sticky="top" expand="lg" className="navbar-custom">
       <Container>
         <Navbar.Brand as={Link} to="/">
           Film Magic
