@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { Movie } from "../../types/Movie";
 import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
+import RelatedMovies from "../../components/RelatedMovies";
 
 function Details() {
   const { id } = useParams();
@@ -23,6 +24,8 @@ function Details() {
           }
         );
         const movie = response.data;
+        console.log(movie);
+
         setMovie(movie);
       } catch (error) {
         console.log(error);
@@ -44,13 +47,18 @@ function Details() {
         <Col>
           <Card border="primary">
             <Card.Body>
-              <Card.Title>{movie?.title}</Card.Title>
-              <Card.Text style={{fontSize:"30px"}}>{movie?.overview}</Card.Text>
+              <Card.Title style={{ fontSize: "40px" }}>
+                {movie?.title}
+              </Card.Title>
+              <Card.Text style={{ fontSize: "30px" }}>
+                {movie?.overview}
+              </Card.Text>
               <Button variant="primary">Watch Trailer</Button>
             </Card.Body>
           </Card>
         </Col>
       </Row>
+      <RelatedMovies />
     </Container>
   );
 }
