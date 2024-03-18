@@ -3,13 +3,13 @@ import "./Details.css";
 import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { Movie } from "../../types/Movie";
-import { Card, Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
+import RelatedMovies from "../../components/RelatedMovies";
 
 function Details() {
   const { id } = useParams();
   const [movie, setMovie] = useState<Movie | null>();
   const accessToken = process.env.REACT_APP_API_ACCESS_TOKEN;
-  const imageUrl = process.env.REACT_APP_IMAGE_URL;
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -24,7 +24,8 @@ function Details() {
           }
         );
         const movie = response.data;
-        console.log(movie, "res data");
+        console.log(movie);
+
         setMovie(movie);
       } catch (error) {
         console.log(error);
@@ -35,17 +36,29 @@ function Details() {
   }, [id]);
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-5">
       <Row>
-        <Col lg={4}>
-          <Image src={`${imageUrl}/${movie?.poster_path}`} rounded />
-          {movie?.title}
-          <br></br>
-          {movie?.overview}
+        <Col>
+          <Image
+            src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
+            rounded
+          />
         </Col>
-        {/* <Col lg={4}>{movie?.overview}</Col>
-        <Col lg={4}>{movie?.overview}</Col> */}
+        <Col>
+          <Card border="primary">
+            <Card.Body>
+              <Card.Title style={{ fontSize: "40px" }}>
+                {movie?.title}
+              </Card.Title>
+              <Card.Text style={{ fontSize: "30px" }}>
+                {movie?.overview}
+              </Card.Text>
+              <Button variant="primary">Watch Trailer</Button>
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
+      <RelatedMovies />
     </Container>
   );
 }
