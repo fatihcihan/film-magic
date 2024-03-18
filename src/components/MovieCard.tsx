@@ -19,14 +19,19 @@ function MovieCard(props: { movie: Movie }) {
     <>
       <Card style={{ width: "18rem", margin: "0 18px", marginBottom: "30px" }}>
         <Card.Img variant="top" src={`${imageUrl}/${movie.poster_path}`} />
-        <Card.Body>
+        <Card.Body className="d-flex flex-column">
           <Card.Title>{movie.title}</Card.Title>
           <Card.Text>{shortenOverview(movie.overview, 100)}</Card.Text>
-          <Link to={`/details/${movie.id}`}>
-            <Button variant="outline-primary" size="lg">
-              Details
-            </Button>
-          </Link>
+          <div className="d-flex justify-content-between">
+            <Card.Link as={Link} to={`/details/${movie.id}`}>
+              <Button variant="outline-primary" size="lg">
+                Details
+              </Button>
+            </Card.Link>
+            <Card.Title style={{ marginTop: "10px" }}>
+              Vote: {movie.vote_average.toFixed(1)}
+            </Card.Title>
+          </div>
         </Card.Body>
       </Card>
     </>
