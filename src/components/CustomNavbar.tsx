@@ -3,6 +3,7 @@ import "./CustomNavbar.css";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { NavDropdown } from "react-bootstrap";
 
 const CustomNavbar: React.FC = () => {
   return (
@@ -15,12 +16,34 @@ const CustomNavbar: React.FC = () => {
           <Nav.Link as={Link} to="/">
             Home
           </Nav.Link>
-          <Nav.Link as={Link} to="/popular">
-            Popular
-          </Nav.Link>
-          <Nav.Link as={Link} to="/top-rated">
-            Top Rated
-          </Nav.Link>
+          <NavDropdown title="Movies">
+            <NavDropdown.Item as={Link} to="/">
+              Popular
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/">
+              Now Playing
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/">
+              Upcoming
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/top-rated">
+              Top Rated
+            </NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="TV Series">
+            <NavDropdown.Item as={Link} to="/">
+              Popular
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/">
+              Airing Today
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/">
+              On TV
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/top-rated">
+              Top Rated
+            </NavDropdown.Item>
+          </NavDropdown>
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
