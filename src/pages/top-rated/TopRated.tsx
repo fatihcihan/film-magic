@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { Movie } from "../../types/Movie";
 import axios, { AxiosResponse } from "axios";
+import MovieCard from "../../components/MovieCard";
 
 const TopRated: React.FC = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
@@ -33,9 +34,8 @@ const TopRated: React.FC = (): JSX.Element => {
   return (
     <Container>
       <Row lg={4}>
-        {movies?.map((movie) => (
-          <div>{movie.title}</div>
-        ))}
+        {movies &&
+          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </Row>
     </Container>
   );
