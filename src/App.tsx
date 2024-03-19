@@ -5,6 +5,7 @@ import Create from "./pages/create/Create";
 import Details from "./pages/details/Details";
 import Search from "./pages/search/Search";
 import MainLayout from "./layout/MainLayout";
+import TopRated from "./pages/top-rated/TopRated";
 
 const routes = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const routes = createBrowserRouter([
       { path: "/create", element: <Create /> },
       { path: "/details/:id", element: <Details /> },
       { path: "/search", element: <Search /> },
+      { path: "/top-rated", element: <TopRated /> },
     ],
   },
 ]);
