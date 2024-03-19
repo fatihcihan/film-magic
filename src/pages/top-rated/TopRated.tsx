@@ -3,9 +3,12 @@ import { Container, Row } from "react-bootstrap";
 import { Movie } from "../../types/Movie";
 import axios, { AxiosResponse } from "axios";
 import MovieCard from "../../components/MovieCard";
+import Search from "../../components/Search";
 
 const TopRated: React.FC = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
+  const [filteredMovies, setFilteredMovies] = useState<Movie[] | undefined>([]);
+
   const accessToken = process.env.REACT_APP_API_ACCESS_TOKEN;
 
   const fetchMovies = async () => {
@@ -20,8 +23,8 @@ const TopRated: React.FC = (): JSX.Element => {
         }
       );
       const data = response.data.results;
-      console.log(data, "top rated movie");
       setMovies(data);
+      setFilteredMovies(data);
     } catch (error) {
       console.error(error);
     }
@@ -31,11 +34,23 @@ const TopRated: React.FC = (): JSX.Element => {
     fetchMovies();
   }, []);
 
+  const handleSearch = (searchValue: string) => {
+    let filteredMovies = movies?.filter((movie) => {
+      return (
+        movie.title.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1
+      );
+    });
+    setFilteredMovies(filteredMovies);
+  };
+
   return (
     <Container>
+      <Search onSearch={handleSearch} />
       <Row lg={4}>
-        {movies &&
-          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+        {filteredMovies &&
+          filteredMovies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
       </Row>
     </Container>
   );
