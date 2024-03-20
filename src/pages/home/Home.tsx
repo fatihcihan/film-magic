@@ -4,8 +4,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import "./Home.css";
 import { Movie } from "../../types/Movie";
-import MovieCard from "../../components/MovieCard";
-import Search from "../../components/Search";
+import MovieCard from "../../components/MovieCard/MovieCard";
+import Search from "../../components/Search/Search";
 
 const Home: React.FC = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
