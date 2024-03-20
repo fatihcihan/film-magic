@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { Movie } from "../../types/Movie";
 import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
-import RelatedMovies from "../../components/RelatedMovies";
+import RelatedMovies from "../../components/RelatedMovies/RelatedMovies";
 
 function Details() {
   const { id } = useParams();
