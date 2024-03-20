@@ -1,4 +1,4 @@
-import CustomNavbar from "../components/CustomNavbar";
+import CustomNavbar from "../components/CustomNavbar/CustomNavbar";
 import Container from "react-bootstrap/Container";
 import { Outlet } from "react-router-dom";
 
