@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Movie } from "../types/Movie";
+import { Movie } from "../../types/Movie";
 import { GoStarFill } from "react-icons/go";
 import "./MovieCard.css";
 
