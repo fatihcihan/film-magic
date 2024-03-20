@@ -31,8 +31,9 @@ function MovieCard(props: { movie: Movie }) {
               </Button>
             </Card.Link>
             <Card.Title style={{ marginTop: "10px" }}>
-              <span className="gold-star">
-                <GoStarFill /> {movie.vote_average.toFixed(1)}
+              <span>
+                <GoStarFill className="gold-star" />{" "}
+                {movie.vote_average.toFixed(1)}
               </span>
             </Card.Title>
           </div>
