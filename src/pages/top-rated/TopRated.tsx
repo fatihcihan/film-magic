@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { Movie } from "../../types/Movie";
 import axios, { AxiosResponse } from "axios";
-import MovieCard from "../../components/MovieCard";
-import Search from "../../components/Search";
+import MovieCard from "../../components/MovieCard/MovieCard";
+import Search from "../../components/Search/Search";
 
 const TopRated: React.FC = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
