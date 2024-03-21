@@ -1,6 +1,7 @@
 import CustomNavbar from "../components/CustomNavbar/CustomNavbar";
 import Container from "react-bootstrap/Container";
 import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer/Footer";
 
 function MainLayout() {
   return (
@@ -9,6 +10,7 @@ function MainLayout() {
       <Container>
         <Outlet />
       </Container>
+      <Footer/>
     </>
   );
 }
