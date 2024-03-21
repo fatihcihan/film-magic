@@ -5,7 +5,7 @@ import axios, { AxiosResponse } from "axios";
 import MovieCard from "../../../components/MovieCard/MovieCard";
 import Search from "../../../components/Search/Search";
 
-const TopRated: React.FC = (): JSX.Element => {
+const TopRatedMovies: React.FC = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
   const [filteredMovies, setFilteredMovies] = useState<Movie[] | undefined>([]);
 
@@ -56,4 +56,4 @@ const TopRated: React.FC = (): JSX.Element => {
   );
 };
 
-export default TopRated;
+export default TopRatedMovies;
