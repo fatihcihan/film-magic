@@ -1,11 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/home/Home";
-import Create from "./pages/create/Create";
 import Details from "./pages/details/Details";
-import Search from "./pages/search/Search";
 import MainLayout from "./layout/MainLayout";
-import TopRated from "./pages/movies/top-rated/TopRated";
+import TopRatedMovies from "./pages/movies/top-rated/TopRatedMovies";
+import PopularMovies from "./pages/movies/popular/PopularMovies";
+import PopularSeries from "./pages/tv-series/popular/PopularSeries";
+import TopRatedSeries from "./pages/tv-series/top-rated/TopRatedSeries";
 
 const routes = createBrowserRouter([
   {
@@ -13,10 +14,11 @@ const routes = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/create", element: <Create /> },
       { path: "/details/:id", element: <Details /> },
-      { path: "/search", element: <Search /> },
-      { path: "/top-rated", element: <TopRated /> },
+      { path: "/movies/popular", element: <PopularMovies /> },
+      { path: "/movies/top-rated", element: <TopRatedMovies /> },
+      { path: "/tv-series/popular", element: <PopularSeries /> },
+      { path: "/tv-series/top-rated", element: <TopRatedSeries /> },
     ],
   },
 ]);
