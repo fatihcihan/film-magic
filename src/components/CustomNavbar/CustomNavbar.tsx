@@ -20,27 +20,27 @@ const CustomNavbar: React.FC = () => {
             <NavDropdown.Item as={Link} to="/">
               Popular
             </NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/">
+           {/*  <NavDropdown.Item as={Link} to="/">
               Now Playing
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/">
               Upcoming
-            </NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/top-rated">
+            </NavDropdown.Item> */}
+            <NavDropdown.Item as={Link} to="/movies/top-rated">
               Top Rated
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="TV Series">
-            <NavDropdown.Item as={Link} to="/">
+            <NavDropdown.Item as={Link} to="/tv-series/popular">
               Popular
             </NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/">
+            {/* <NavDropdown.Item as={Link} to="/">
               Airing Today
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/">
               On TV
-            </NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/top-rated">
+            </NavDropdown.Item> */}
+            <NavDropdown.Item as={Link} to="tv-series/top-rated">
               Top Rated
             </NavDropdown.Item>
           </NavDropdown>
