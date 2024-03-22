@@ -1,7 +1,9 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Movie } from "../types/Movie";
+import { Movie } from "../../types/Movie";
+import { GoStarFill } from "react-icons/go";
+import "./MovieCard.css";
 
 function MovieCard(props: { movie: Movie }) {
   const imageUrl = process.env.REACT_APP_IMAGE_URL;
@@ -29,7 +31,10 @@ function MovieCard(props: { movie: Movie }) {
               </Button>
             </Card.Link>
             <Card.Title style={{ marginTop: "10px" }}>
-              Vote: {movie.vote_average.toFixed(1)}
+              <span>
+                <GoStarFill className="gold-star" />{" "}
+                {movie.vote_average.toFixed(1)}
+              </span>
             </Card.Title>
           </div>
         </Card.Body>

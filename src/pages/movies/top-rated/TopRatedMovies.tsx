@@ -1,24 +1,20 @@
+import React, { useEffect, useState } from "react";
+import { Container, Row } from "react-bootstrap";
+import { Movie } from "../../../types/Movie";
 import axios, { AxiosResponse } from "axios";
-import { useEffect, useState } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import "./Home.css";
-import { Movie } from "../../types/Movie";
-import MovieCard from "../../components/MovieCard/MovieCard";
-import Search from "../../components/Search/Search";
+import MovieCard from "../../../components/MovieCard/MovieCard";
+import Search from "../../../components/Search/Search";
 
-const Home: React.FC = (): JSX.Element => {
+const TopRatedMovies: React.FC = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
   const [filteredMovies, setFilteredMovies] = useState<Movie[] | undefined>([]);
 
-  const imageUrl = process.env.REACT_APP_IMAGE_URL;
-  const apiKey = process.env.REACT_APP_API_KEY;
   const accessToken = process.env.REACT_APP_API_ACCESS_TOKEN;
 
   const fetchMovies = async () => {
     try {
       const response: AxiosResponse<any> = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+        "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
         {
           headers: {
             Accept: "application/json",
@@ -26,7 +22,7 @@ const Home: React.FC = (): JSX.Element => {
           },
         }
       );
-      const data: Movie[] = response.data.results;
+      const data = response.data.results;
       setMovies(data);
       setFilteredMovies(data);
     } catch (error) {
@@ -60,4 +56,4 @@ const Home: React.FC = (): JSX.Element => {
   );
 };
 
-export default Home;
+export default TopRatedMovies;

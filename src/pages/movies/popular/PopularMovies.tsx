@@ -2,17 +2,15 @@ import axios, { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import "./Home.css";
-import { Movie } from "../../types/Movie";
-import MovieCard from "../../components/MovieCard/MovieCard";
-import Search from "../../components/Search/Search";
+// import "./Popular.css";
+import { Movie } from "../../../types/Movie";
+import Search from "../../../components/Search/Search";
+import MovieCard from "../../../components/MovieCard/MovieCard";
 
-const Home: React.FC = (): JSX.Element => {
+const PopularMovies: React.FC = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
   const [filteredMovies, setFilteredMovies] = useState<Movie[] | undefined>([]);
 
-  const imageUrl = process.env.REACT_APP_IMAGE_URL;
-  const apiKey = process.env.REACT_APP_API_KEY;
   const accessToken = process.env.REACT_APP_API_ACCESS_TOKEN;
 
   const fetchMovies = async () => {
@@ -60,4 +58,4 @@ const Home: React.FC = (): JSX.Element => {
   );
 };
 
-export default Home;
+export default PopularMovies;
