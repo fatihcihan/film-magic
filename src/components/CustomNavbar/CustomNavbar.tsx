@@ -10,17 +10,23 @@ const CustomNavbar: React.FC = () => {
     <Navbar sticky="top" expand="lg" className="navbar-custom">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          Film Magic
+         {/*  <img
+            src="https://i.imgur.com/iCxOktj.png"
+            alt="asd"
+            width={40}
+            height={40}
+            className="d-inline-block align-top"
+          /> */}
         </Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link as={Link} to="/">
+          {/*   <Nav.Link as={Link} to="/">
             Home
-          </Nav.Link>
+          </Nav.Link> */}
           <NavDropdown title="Movies">
             <NavDropdown.Item as={Link} to="/">
               Popular
             </NavDropdown.Item>
-           {/*  <NavDropdown.Item as={Link} to="/">
+            {/*  <NavDropdown.Item as={Link} to="/">
               Now Playing
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/">
