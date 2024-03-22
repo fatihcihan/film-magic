@@ -3,4 +3,5 @@ export class Serie {
     name!: string;
     overview!: string;
     vote_average!: number;
+    poster_path!: string;
 }
