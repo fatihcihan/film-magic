@@ -6,10 +6,11 @@ import { Movie } from "../../../types/Movie";
 import Search from "../../../components/Search/Search";
 import MovieCard from "../../../components/MovieCard/MovieCard";
 import { Serie } from "../../../types/Serie";
+import SerieCard from "../../../components/SerieCard/SerieCard";
 
 const PopularSeries: React.FC = (): JSX.Element => {
   const [series, setSeries] = useState<Serie[] | null>([]);
-  const [filteredSeries, setFilteredSeries] = useState<Movie[] | undefined>([]);
+  const [filteredSeries, setFilteredSeries] = useState<Serie[] | undefined>([]);
 
   const accessToken = process.env.REACT_APP_API_ACCESS_TOKEN;
 
@@ -25,9 +26,8 @@ const PopularSeries: React.FC = (): JSX.Element => {
         }
       );
       const data = response.data.results;
-      console.log(data, "data");
-
       setSeries(data);
+      setFilteredSeries(data);
     } catch (error) {
       console.log(error);
     }
@@ -36,10 +36,24 @@ const PopularSeries: React.FC = (): JSX.Element => {
   useEffect(() => {
     getPopularSeries();
   }, []);
+
+  const handleSearch = (searchValue: string) => {
+    let filteredSeries = series?.filter((serie) => {
+      return serie.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
+    });
+    setFilteredSeries(filteredSeries);
+  };
+
   return (
-    <div>
-      <h1>{series?.map((serie) => serie.name)}</h1>
-    </div>
+    <Container>
+      <Search onSearch={handleSearch} />
+      <Row lg={4}>
+        {filteredSeries &&
+          filteredSeries.map((serie) => (
+            <SerieCard key={serie.id} serie={serie} />
+          ))}
+      </Row>
+    </Container>
   );
 };
 
