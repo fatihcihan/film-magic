@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import CustomNavbar from "../CustomNavbar/CustomNavbar";
 
-const Header: React.FC = () => {
+const Header: React.FC = (): JSX.Element => {
   return (
     <header>
       <CustomNavbar />
