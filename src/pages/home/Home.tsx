@@ -11,8 +11,6 @@ const Home: React.FC = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
   const [filteredMovies, setFilteredMovies] = useState<Movie[] | undefined>([]);
 
-  const imageUrl = process.env.REACT_APP_IMAGE_URL;
-  const apiKey = process.env.REACT_APP_API_KEY;
   const accessToken = process.env.REACT_APP_API_ACCESS_TOKEN;
 
   const fetchMovies = async () => {
