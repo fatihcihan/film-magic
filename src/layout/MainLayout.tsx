@@ -1,12 +1,12 @@
-import CustomNavbar from "../components/CustomNavbar/CustomNavbar";
 import Container from "react-bootstrap/Container";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
 
 function MainLayout() {
   return (
     <>
-      <CustomNavbar />
+      <Header />
       <Container>
         <Outlet />
       </Container>
