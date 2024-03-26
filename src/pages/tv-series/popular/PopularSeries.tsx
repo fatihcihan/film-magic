@@ -2,9 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import { Movie } from "../../../types/Movie";
 import Search from "../../../components/Search/Search";
-import MovieCard from "../../../components/MovieCard/MovieCard";
 import { Serie } from "../../../types/Serie";
 import SerieCard from "../../../components/SerieCard/SerieCard";
 

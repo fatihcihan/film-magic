@@ -5,3 +5,12 @@
 .nav-link {
   font-size: 1.3rem;
 }
+
+.dropdown-menu {
+  background-color: #dc3545;
+}
+
+.dropdown-item {
+  color: white;
+}
+ 

@@ -7,63 +7,53 @@ import { NavDropdown } from "react-bootstrap";
 
 const CustomNavbar: React.FC = () => {
   return (
-    <Navbar sticky="top" expand="lg" className="navbar-custom">
-      <Container>
-        <Navbar.Brand as={Link} to="/">
-         {/*  <img
-            src="https://i.imgur.com/iCxOktj.png"
-            alt="asd"
-            width={40}
-            height={40}
-            className="d-inline-block align-top"
-          /> */}
-        </Navbar.Brand>
-        <Nav className="me-auto">
-          {/*   <Nav.Link as={Link} to="/">
-            Home
-          </Nav.Link> */}
-          <NavDropdown title="Movies">
-            <NavDropdown.Item as={Link} to="/">
-              Popular
-            </NavDropdown.Item>
-            {/*  <NavDropdown.Item as={Link} to="/">
-              Now Playing
-            </NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/">
-              Upcoming
-            </NavDropdown.Item> */}
-            <NavDropdown.Item as={Link} to="/movies/top-rated">
-              Top Rated
-            </NavDropdown.Item>
-          </NavDropdown>
-          <NavDropdown title="TV Series">
-            <NavDropdown.Item as={Link} to="/tv-series/popular">
-              Popular
-            </NavDropdown.Item>
-            {/* <NavDropdown.Item as={Link} to="/">
-              Airing Today
-            </NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/">
-              On TV
-            </NavDropdown.Item> */}
-            <NavDropdown.Item as={Link} to="tv-series/top-rated">
-              Top Rated
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse className="justify-content-end">
-          <Nav>
-            <Nav.Link as={Link} to="/">
-              Sign Up
-            </Nav.Link>
-            <Nav.Link as={Link} to="/create">
-              Login
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <>
+      <Navbar
+        bg="danger"
+        expand="lg"
+        variant="dark"
+        sticky="top"
+        className="py-3"
+      >
+        <Container>
+          <Navbar.Brand as={Link} to="/">
+            Film Magic
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <NavDropdown title="Movie" id="basic-nav-dropdown">
+                <NavDropdown.Item as={Link} to="/movies/popular">
+                  Popular Movie
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/movies/top-rated">
+                  Top Rated Movie
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Series" id="basic-nav-dropdown">
+                <NavDropdown.Item as={Link} to="/tv-series/popular">
+                  Popular Series
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/tv-series/top-rated">
+                  Top Rated Series
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+            <Nav className="ms-auto">
+              <Nav.Link as={Link} to="/" active>
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} to="/link">
+                About
+              </Nav.Link>
+              <Nav.Link as={Link} to="/link">
+                Contact
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 };
 
