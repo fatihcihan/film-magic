@@ -13,7 +13,8 @@ const routes = createBrowserRouter([
     path: "/",
     element: <MainLayout />,
     children: [
-      { path: "/", element: <Home /> },
+      // { index: true, element: <Home /> },
+      // { path: "/", element: <Home /> },
       { path: "/details/:id", element: <Details /> },
       { path: "/movies/popular", element: <PopularMovies /> },
       { path: "/movies/top-rated", element: <TopRatedMovies /> },
