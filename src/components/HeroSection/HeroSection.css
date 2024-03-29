@@ -9,14 +9,14 @@
 #hero .container {
   height: 50vh;
 }
-
+/* 
 .generic {
   padding: 100px 0;
-}
+} */
 
 /* Latest Section*/
 
-section#latest .latest-item img {
+/* section#latest .latest-item img {
   min-height: 100%;
   width: 100%;
 }
@@ -59,3 +59,4 @@ section#latest .overlay .chevron-icon {
   opacity: 0;
   font-size: 2rem;
 }
+ */
