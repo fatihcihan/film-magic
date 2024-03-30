@@ -74,7 +74,7 @@ function TeamSection() {
                   variant="primary"
                   onClick={() => setModalShow4(true)}
                 >
-                  <span className="lead">ARTIST</span>
+                  <span className="lead">CREATOR</span>
                 </Button>
                 <TeamMemberModal4
                   show={modalShow4}
@@ -107,26 +107,31 @@ function TeamMemberModal1(props: any) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Image
-          className="img-fluid"
-          src="https://images.unsplash.com/photo-1524749292158-7540c2494485?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGRlc2lnbmVyfGVufDB8fDB8fHww"
-        />
-        <h4 className="text-danger lead mt-2">Jon Doe</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <ul className="list-unstyled">
-          <li>Lorem ipsum dolor sit amet.</li>
-          <li>Lorem ipsum dolor sit amet.</li>
-          <li>Lorem ipsum dolor sit amet.</li>
-          <ul>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-          </ul>
-          <li>Lorem ipsum dolor sit amet.</li>
-        </ul>
+        <Container>
+          <Row>
+            <Image
+              className="img-fluid"
+              src="https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <h4 className="text-danger lead mt-2">Jon Doe</h4>
+            <p>
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+              ac consectetur ac, vestibulum at eros.
+            </p>
+            <ul className="list-unstyled">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+              </ul>
+              <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+          </Row>
+        </Container>
+
         <ButtonGroup className="mb-2 btn-group w-100">
           <Button variant="danger">LINKEDIN</Button>
           <Button variant="warning">FACEBOOK</Button>
@@ -156,12 +161,36 @@ function TeamMemberModal2(props: any) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <Container>
+          <Row>
+            <Image
+              className="img-fluid"
+              src="https://images.unsplash.com/photo-1580894908361-967195033215?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGRldmVsb3BlcnxlbnwwfHwwfHx8MA%3D%3D"
+            />
+            <h4 className="text-danger lead mt-2">Jon Doe</h4>
+            <p>
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+              ac consectetur ac, vestibulum at eros.
+            </p>
+            <ul className="list-unstyled">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+              </ul>
+              <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+          </Row>
+        </Container>
+
+        <ButtonGroup className="mb-2 btn-group w-100">
+          <Button variant="danger">LINKEDIN</Button>
+          <Button variant="warning">FACEBOOK</Button>
+          <Button variant="success">TWITTER</Button>
+        </ButtonGroup>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -186,12 +215,36 @@ function TeamMemberModal3(props: any) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <Container>
+          <Row>
+            <Image
+              className="img-fluid"
+              src="https://images.unsplash.com/photo-1528901166007-3784c7dd3653?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <h4 className="text-danger lead mt-2">Jon Doe</h4>
+            <p>
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+              ac consectetur ac, vestibulum at eros.
+            </p>
+            <ul className="list-unstyled">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+              </ul>
+              <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+          </Row>
+        </Container>
+
+        <ButtonGroup className="mb-2 btn-group w-100">
+          <Button variant="danger">LINKEDIN</Button>
+          <Button variant="warning">FACEBOOK</Button>
+          <Button variant="success">TWITTER</Button>
+        </ButtonGroup>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -216,12 +269,36 @@ function TeamMemberModal4(props: any) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <Container>
+          <Row>
+            <Image
+              className="img-fluid"
+              src="https://images.unsplash.com/photo-1521999693742-4717d76f97cc?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <h4 className="text-danger lead mt-2">Jon Doe</h4>
+            <p>
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+              ac consectetur ac, vestibulum at eros.
+            </p>
+            <ul className="list-unstyled">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+              </ul>
+              <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+          </Row>
+        </Container>
+
+        <ButtonGroup className="mb-2 btn-group w-100">
+          <Button variant="danger">LINKEDIN</Button>
+          <Button variant="warning">FACEBOOK</Button>
+          <Button variant="success">TWITTER</Button>
+        </ButtonGroup>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
