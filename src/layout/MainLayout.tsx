@@ -8,6 +8,7 @@ import AboutUsSection from "../components/AboutUsSection/AboutUsSection";
 import BlogSection from "../components/BlogSection/BlogSection";
 import DividerSection from "../components/DividerSection/DividerSection";
 import ApproachSection from "../components/ApproachSection/ApproachSection";
+import TeamSection from "../components/TeamSection/TeamSection";
 
 function MainLayout() {
   const location = useLocation();
@@ -17,6 +18,7 @@ function MainLayout() {
   const blogSection = location.pathname === "/";
   const dividerSection = location.pathname === "/";
   const approachSection = location.pathname === "/";
+  const teamSection = location.pathname === "/";
 
   return (
     <>
@@ -27,6 +29,7 @@ function MainLayout() {
       {blogSection && <BlogSection />}
       {dividerSection && <DividerSection />}
       {approachSection && <ApproachSection />}
+      {teamSection && <TeamSection />}
       <Container>
         <Outlet />
       </Container>
