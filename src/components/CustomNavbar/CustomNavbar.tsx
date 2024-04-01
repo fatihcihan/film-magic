@@ -10,7 +10,7 @@ const CustomNavbar: React.FC = () => {
     <>
       <Navbar
         bg="danger"
-        expand="lg"
+        expand="md"
         variant="dark"
         sticky="top"
         className="py-3"
