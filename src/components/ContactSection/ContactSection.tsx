@@ -31,7 +31,7 @@ export const ContactSection = () => {
         <Container>
           <h2 className="display-5 text-danger mb-5">GET IN TOUCH</h2>
           <Row>
-            <Col>
+            <Col md="12" lg="6">
               <Form className="row">
                 <Col md={6}>
                   <InputGroup>
