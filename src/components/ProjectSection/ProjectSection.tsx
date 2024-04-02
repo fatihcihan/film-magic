@@ -96,7 +96,7 @@ const ProjectSection = () => {
         <Row>
           <Collapse in={open1}>
             <Container fluid className="p-0 mt-5">
-              <Row className="p-0 shadow">
+              <Row className="p-0" shadow="true">
                 <Col sm="6" xl="3">
                   <CloseButton onClick={() => setOpen1(!open1)} />
                   <dl className="row ps-5">
@@ -135,10 +135,10 @@ const ProjectSection = () => {
 
           <Collapse in={open2}>
             <Container fluid className="p-0">
-              <Row className="p-0">
-                <Col>
+              <Row className="p-0" shadow="true">
+                <Col sm="6" xl="3">
                   <CloseButton onClick={() => setOpen2(!open2)} />
-                  <dl className="row">
+                  <dl className="row ps-5">
                     <dt className="col-12">
                       <span className="text-danger lead">Porject Name 2</span>
                     </dt>
@@ -150,19 +150,19 @@ const ProjectSection = () => {
                     <dd className="col-8">2 weeks</dd>
                   </dl>
                 </Col>
-                <Col>
+                <Col sm="6" xl="3" className="p-0">
                   <Image
                     src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     fluid
                   />
                 </Col>
-                <Col>
+                <Col sm="6" xl="3" className="p-0">
                   <Image
                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     fluid
                   />
                 </Col>
-                <Col>
+                <Col sm="6" xl="3" className="p-0">
                   <Image
                     src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     fluid
@@ -175,9 +175,9 @@ const ProjectSection = () => {
           <Collapse in={open3}>
             <Container fluid>
               <Row>
-                <Col>
+                <Col sm="6" xl="3">
                   <CloseButton onClick={() => setOpen3(!open3)} />
-                  <dl className="row">
+                  <dl className="row ps-5">
                     <dt className="col-12">
                       <span className="text-danger lead">Porject Name 3</span>
                     </dt>
@@ -189,19 +189,19 @@ const ProjectSection = () => {
                     <dd className="col-8">2 weeks</dd>
                   </dl>
                 </Col>
-                <Col>
+                <Col sm="6" xl="3" className="p-0">
                   <Image
                     src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     fluid
                   />
                 </Col>
-                <Col>
+                <Col sm="6" xl="3" className="p-0">
                   <Image
                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     fluid
                   />
                 </Col>
-                <Col>
+                <Col sm="6" xl="3" className="p-0">
                   <Image
                     src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     fluid
@@ -216,7 +216,7 @@ const ProjectSection = () => {
               <Row>
                 <Col>
                   <CloseButton onClick={() => setOpen4(!open4)} />
-                  <dl className="row">
+                  <dl className="row ps-5">
                     <dt className="col-12">
                       <span className="text-danger lead">Porject Name 4</span>
                     </dt>
@@ -228,19 +228,19 @@ const ProjectSection = () => {
                     <dd className="col-8">2 weeks</dd>
                   </dl>
                 </Col>
-                <Col>
+                <Col sm="6" xl="3" className="p-0">
                   <Image
                     src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     fluid
                   />
                 </Col>
-                <Col>
+                <Col sm="6" xl="3" className="p-0">
                   <Image
                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     fluid
                   />
                 </Col>
-                <Col>
+                <Col sm="6" xl="3" className="p-0">
                   <Image
                     src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     fluid
