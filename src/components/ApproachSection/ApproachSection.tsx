@@ -9,8 +9,8 @@ function ApproachSection() {
         <Container>
           <h2 className="display-5 text-danger">HOW WE APPROACH</h2>
           <Row>
-            <Col>
-              <Card>
+            <Col md="12" lg="6">
+              <Card className="mb-5">
                 <Card.Img
                   variant="top"
                   src="https://images.unsplash.com/photo-1606234942951-b10a5b373ff0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y3JlYXRpdmV8ZW58MHx8MHx8fDA%3D"
@@ -70,21 +70,22 @@ function ApproachSection() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col>
+            <Col md="12" lg="6">
               <Card>
                 <Card.Img
                   variant="top"
                   src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGNvZGluZ3xlbnwwfHwwfHx8MA%3D%3D"
-                  height="425px"
                 />
                 <Card.Body>
                   <Card.Title>
                     <h5 className="lead text-danger text-uppercase mb-4">
-                      Design
+                      Development
                     </h5>
                     <Accordion defaultActiveKey="" flush>
                       <Accordion.Item eventKey="0">
-                        <Accordion.Header>Built For Perfection</Accordion.Header>
+                        <Accordion.Header>
+                          Built For Perfection
+                        </Accordion.Header>
                         <Accordion.Body>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit, sed do eiusmod tempor incididunt ut labore et
@@ -98,7 +99,9 @@ function ApproachSection() {
                         </Accordion.Body>
                       </Accordion.Item>
                       <Accordion.Item eventKey="1">
-                        <Accordion.Header>The Age Of Development</Accordion.Header>
+                        <Accordion.Header>
+                          The Age Of Development
+                        </Accordion.Header>
                         <Accordion.Body>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit, sed do eiusmod tempor incididunt ut labore et
@@ -112,7 +115,9 @@ function ApproachSection() {
                         </Accordion.Body>
                       </Accordion.Item>
                       <Accordion.Item eventKey="2">
-                        <Accordion.Header>Dev. Forget The Rest</Accordion.Header>
+                        <Accordion.Header>
+                          Dev. Forget The Rest
+                        </Accordion.Header>
                         <Accordion.Body>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit, sed do eiusmod tempor incididunt ut labore et
