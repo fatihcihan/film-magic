@@ -1,5 +1,4 @@
-import React from "react";
-import { Card, Col, Container, Image, ListGroup, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import { LuClock } from "react-icons/lu";
 import { MdOutlineInsertComment } from "react-icons/md";
 
