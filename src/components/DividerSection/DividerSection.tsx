@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 
 const DividerSection = () => {
@@ -34,28 +33,3 @@ const DividerSection = () => {
 };
 
 export default DividerSection;
-
-/* 
-{ <Form>
-    <Form.Control
-      className="form-control rounded-0 border-danger text-white bg-transparent"
-      size="lg"
-      type="email"
-      placeholder="@JOIN NEWSLETTER"
-    />
-    <InputGroup size="lg">
-     
-      <Button
-        className="btn btn-danger rounded-0 text-white border-danger"
-        as="input"
-        type="submit"
-        value="SUBSCRIBE"
-      />
-    </InputGroup>
-  </Form>} */
-
-{
-  /* <InputGroup.Text id="inputGroup-sizing-lg">
-        Large
-      </InputGroup.Text> */
-}
