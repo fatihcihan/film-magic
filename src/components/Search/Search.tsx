@@ -8,7 +8,6 @@ const Search: React.FC<{ onSearch: (searchValue: string) => void }> = ({
 
   const handleSearch = (event: any) => {
     const { value } = event.target;
-    console.log(value);
     setSearchInput(value);
     onSearch(value);
   };
