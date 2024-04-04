@@ -1,6 +1,4 @@
-import React from "react";
 import {
-  FaEye,
   FaGithub,
   FaGoogle,
   FaLinkedin,
@@ -10,17 +8,9 @@ import {
   FaSquareInstagram,
   FaTwitter,
 } from "react-icons/fa6";
-import {
-  Button,
-  Col,
-  Container,
-  Form,
-  InputGroup,
-  Row,
-  Table,
-} from "react-bootstrap";
+import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { LuMail } from "react-icons/lu";
-import { MdAlternateEmail, MdPlusOne } from "react-icons/md";
+import { MdAlternateEmail } from "react-icons/md";
 import { ImFacebook2, ImYoutube } from "react-icons/im";
 import { HiEye } from "react-icons/hi";
 
