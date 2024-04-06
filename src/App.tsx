@@ -7,6 +7,7 @@ import TopRatedMovies from "./pages/movies/top-rated/TopRatedMovies";
 import PopularMovies from "./pages/movies/popular/PopularMovies";
 import PopularSeries from "./pages/tv-series/popular/PopularSeries";
 import TopRatedSeries from "./pages/tv-series/top-rated/TopRatedSeries";
+import { MyMovieList } from "./components/MyMovieList/MyMovieList";
 
 const routes = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const routes = createBrowserRouter([
       { path: "/movies/top-rated", element: <TopRatedMovies /> },
       { path: "/tv-series/popular", element: <PopularSeries /> },
       { path: "/tv-series/top-rated", element: <TopRatedSeries /> },
+      { path: "/my-list/movie", element: <MyMovieList /> },
     ],
   },
 ]);
