@@ -38,6 +38,14 @@ const CustomNavbar: React.FC = () => {
                   Top Rated Series
                 </NavDropdown.Item>
               </NavDropdown>
+              <NavDropdown title="My List" id="basic-nav-dropdown">
+                <NavDropdown.Item as={Link} to="/my-list/movie">
+                  My Movie List
+                </NavDropdown.Item>
+                {/*   <NavDropdown.Item as={Link} to="/tv-series/top-rated">
+                  Top Rated Series
+                </NavDropdown.Item> */}
+              </NavDropdown>
             </Nav>
             <Nav className="ms-auto">
               <Nav.Link as={Link} to="/" active>
