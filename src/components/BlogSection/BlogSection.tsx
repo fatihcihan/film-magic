@@ -2,7 +2,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { LuClock } from "react-icons/lu";
 import { MdOutlineInsertComment } from "react-icons/md";
 
-const BlogSection = () => {
+const BlogSection = (): JSX.Element => {
   return (
     <section id="blog" className="generic">
       <Container>
