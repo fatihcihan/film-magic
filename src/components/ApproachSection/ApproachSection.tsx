@@ -1,7 +1,7 @@
 import { Accordion, Card, Col, Container, Row } from "react-bootstrap";
 import "./ApproachSection.css";
 
-function ApproachSection() {
+const ApproachSection = (): JSX.Element => {
   return (
     <div>
       <section id="approach" className="generic">
@@ -139,6 +139,6 @@ function ApproachSection() {
       </section>
     </div>
   );
-}
+};
 
 export default ApproachSection;
