@@ -1,6 +1,6 @@
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 
-const DividerSection = () => {
+const DividerSection: React.FC = (): JSX.Element => {
   return (
     <div>
       <section id="divider" className="generic dark-bg">
