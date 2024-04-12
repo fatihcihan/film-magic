@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./AboutUsSection.css";
 
-const AboutUsSection = () => {
+const AboutUsSection = (): JSX.Element => {
   return (
     <section className="generic">
       <Container>
