@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { NavDropdown } from "react-bootstrap";
 
-const CustomNavbar: React.FC = () => {
+const CustomNavbar: React.FC = (): JSX.Element => {
   return (
     <>
       <Navbar
@@ -16,7 +16,7 @@ const CustomNavbar: React.FC = () => {
         className="py-3"
       >
         <Container>
-          <Navbar.Brand as={Link} to="/">
+          <Navbar.Brand as={Link} to="/home">
             Film Magic
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
