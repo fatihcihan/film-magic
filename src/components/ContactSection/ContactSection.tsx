@@ -14,7 +14,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { ImFacebook2, ImYoutube } from "react-icons/im";
 import { HiEye } from "react-icons/hi";
 
-export const ContactSection = () => {
+const ContactSection = (): JSX.Element => {
   return (
     <>
       <section className="generic dark-bg">
