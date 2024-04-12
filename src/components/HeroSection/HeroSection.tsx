@@ -1,7 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import "./HeroSection.css";
 
-const HeroSection = (): JSX.Element => {
+const HeroSection: React.FC = (): JSX.Element => {
   return (
     <>
       <section className="dark-bg" id="hero">
