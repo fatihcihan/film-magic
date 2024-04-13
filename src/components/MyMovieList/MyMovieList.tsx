@@ -33,8 +33,8 @@ export const MyMovieList: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <Container>
-        <Row lg={4}>
+      <Container fluid className="justify-content-center">
+        <Row lg="3" md={2}>
           {movies &&
             movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
         </Row>
