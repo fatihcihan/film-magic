@@ -10,7 +10,7 @@ const ProjectSection = () => {
   const [open3, setOpen3] = useState(false);
   const [open4, setOpen4] = useState(false);
   return (
-    <section id="latest">
+    <section id="latest" className="generic">
       <Container>
         <h2 className="display-5 text-danger mb-4">WHAT WE DO?</h2>
       </Container>
