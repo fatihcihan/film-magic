@@ -5,4 +5,5 @@ export class Movie {
     poster_path!: string;
     backdrop_path!: string;
     vote_average!: number;
+    homepage!: string;
 }
