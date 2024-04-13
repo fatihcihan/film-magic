@@ -18,10 +18,10 @@ function MovieCard(props: { movie: Movie }) {
 
   return (
     <>
-      <Card style={{ width: "18rem", margin: "0 18px", marginBottom: "30px" }}>
+      <Card className="bg-light border-0 col-sm-6 col-lg-3 mb-3">
         <Card.Img variant="top" src={`${imageUrl}/${movie.poster_path}`} />
         <Card.Body className="d-flex flex-column">
-          <Card.Title>{movie.title}</Card.Title>
+          <Card.Title className="mb-4">{movie.title}</Card.Title>
           <Card.Text>{shortenOverview(movie.overview, 100)}</Card.Text>
           <div className="d-flex justify-content-between">
             <Card.Link as={Link} to={`/details/${movie.id}`}>
@@ -43,3 +43,4 @@ function MovieCard(props: { movie: Movie }) {
 }
 
 export default MovieCard;
+
