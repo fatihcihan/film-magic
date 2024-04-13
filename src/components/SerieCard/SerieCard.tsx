@@ -32,7 +32,7 @@ function SerieCard(props: { serie: Serie }) {
 
   return (
     <>
-      <Card style={{ width: "18rem", margin: "0 18px", marginBottom: "30px" }}>
+      <Card className="bg-light border-0 col-sm-6 col-lg-4 mb-3">
         <Card.Img variant="top" src={`${imageUrl}/${serie.poster_path}`} />
         <Card.Body className="d-flex flex-column">
           <Card.Title>{serie.name}</Card.Title>
