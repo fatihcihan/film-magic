@@ -38,13 +38,13 @@ function Details() {
   return (
     <Container className="mt-5">
       <Row>
-        <Col>
+        <Col md="6">
           <Image
             src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
             rounded
           />
         </Col>
-        <Col>
+        <Col md="6">
           <Card border="primary">
             <Card.Body>
               <Card.Title style={{ fontSize: "40px" }}>
