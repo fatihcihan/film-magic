@@ -44,7 +44,7 @@ const TopRatedSeries: React.FC = (): JSX.Element => {
   return (
     <Container>
       <Search onSearch={handleSearch} />
-      <Row lg={4}>
+      <Row lg={9}>
         {filteredSeries &&
           filteredSeries.map((serie) => (
             <SerieCard key={serie.id} serie={serie} />
