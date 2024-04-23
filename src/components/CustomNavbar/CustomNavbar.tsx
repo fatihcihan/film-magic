@@ -48,9 +48,9 @@ const CustomNavbar: React.FC = (): JSX.Element => {
               </NavDropdown>
             </Nav>
             <Nav className="ms-auto">
-              <Nav.Link as={Link} to="/" active>
+             {/*  <Nav.Link as={Link} to="/" active>
                 Home
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link as={Link} to="/link">
                 About
               </Nav.Link>
