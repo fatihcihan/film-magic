@@ -61,6 +61,7 @@ const routes = createBrowserRouter([
       { path: "popular", element: <PopularMovies /> },
       { path: "top-rated", element: <TopRatedMovies /> },
       { path: "popular/details/:id", element: <Details /> },
+      { path: "top-rated/details/:id", element: <Details /> },
     ],
   },
   {
@@ -69,12 +70,17 @@ const routes = createBrowserRouter([
     children: [
       { path: "popular", element: <PopularSeries /> },
       { path: "top-rated", element: <TopRatedSeries /> },
+      { path: "popular/details/:id", element: <Details /> },
+      { path: "top-rated/details/:id", element: <Details /> },
     ],
   },
   {
     path: "/my-list",
     element: <MainLayout />,
-    children: [{ path: "movie", element: <MyMovieList /> }],
+    children: [
+      { path: "movie", element: <MyMovieList /> },
+      { path: "movie/details/:id", element: <Details /> },
+    ],
   },
 ]);
 
