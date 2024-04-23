@@ -30,7 +30,7 @@ const AboutUsSection = (): JSX.Element => {
         </Row>
 
         <Row>
-          <Col sm="12" md="8" className="bg-light">
+          <Col sm="12" md="8" className="bg-light p-0">
             <div className="d-flex h-100 flex-column justify-content-center">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
