@@ -134,7 +134,7 @@ const ProjectSection = () => {
           </Collapse>
 
           <Collapse in={open2}>
-            <Container fluid className="p-0">
+            <Container fluid className="p-0 mt-5">
               <Row className="p-0" shadow="true">
                 <Col sm="6" xl="3">
                   <CloseButton onClick={() => setOpen2(!open2)} />
@@ -173,8 +173,8 @@ const ProjectSection = () => {
           </Collapse>
 
           <Collapse in={open3}>
-            <Container fluid>
-              <Row>
+            <Container fluid className="p-0 mt-5">
+              <Row className="p-0">
                 <Col sm="6" xl="3">
                   <CloseButton onClick={() => setOpen3(!open3)} />
                   <dl className="row ps-5">
@@ -212,9 +212,9 @@ const ProjectSection = () => {
           </Collapse>
 
           <Collapse in={open4}>
-            <Container fluid>
-              <Row>
-                <Col>
+            <Container fluid className="p-0 mt-5">
+              <Row className="p-0" shadow="true">
+                <Col sm="6" xl="3">
                   <CloseButton onClick={() => setOpen4(!open4)} />
                   <dl className="row ps-5">
                     <dt className="col-12">
