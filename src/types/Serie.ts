@@ -10,6 +10,8 @@ export class Serie {
     overview!: string;
     vote_average!: number;
     poster_path!: string;
-    number_of_seasons!:number;
+    number_of_seasons!: number;
+    popularity!: number;
+    vote_count!: number;
     genres!: MovieGenre[];
 }
