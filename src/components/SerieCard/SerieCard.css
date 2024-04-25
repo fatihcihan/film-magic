@@ -6,3 +6,7 @@
   justify-content: center;
   text-align: center;
 }
+
+.info{
+  flex-grow: 1;
+}

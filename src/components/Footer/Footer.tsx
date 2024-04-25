@@ -1,8 +1,6 @@
-import React from "react";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
-function Footer() {
+const Footer: React.FC = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
   return (
     <footer>
@@ -11,6 +9,6 @@ function Footer() {
       </Container>
     </footer>
   );
-}
+};
 
 export default Footer;

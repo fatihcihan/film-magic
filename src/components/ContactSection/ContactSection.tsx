@@ -1,6 +1,4 @@
-import React from "react";
 import {
-  FaEye,
   FaGithub,
   FaGoogle,
   FaLinkedin,
@@ -10,28 +8,20 @@ import {
   FaSquareInstagram,
   FaTwitter,
 } from "react-icons/fa6";
-import {
-  Button,
-  Col,
-  Container,
-  Form,
-  InputGroup,
-  Row,
-  Table,
-} from "react-bootstrap";
+import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { LuMail } from "react-icons/lu";
-import { MdAlternateEmail, MdPlusOne } from "react-icons/md";
+import { MdAlternateEmail } from "react-icons/md";
 import { ImFacebook2, ImYoutube } from "react-icons/im";
 import { HiEye } from "react-icons/hi";
 
-export const ContactSection = () => {
+const ContactSection = (): JSX.Element => {
   return (
     <>
       <section className="generic dark-bg">
         <Container>
           <h2 className="display-5 text-danger mb-5">GET IN TOUCH</h2>
           <Row>
-            <Col>
+            <Col md="12" lg="6">
               <Form className="row">
                 <Col md={6}>
                   <InputGroup>

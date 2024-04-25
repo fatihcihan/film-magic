@@ -5,18 +5,18 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { NavDropdown } from "react-bootstrap";
 
-const CustomNavbar: React.FC = () => {
+const CustomNavbar: React.FC = (): JSX.Element => {
   return (
     <>
       <Navbar
         bg="danger"
-        expand="lg"
+        expand="md"
         variant="dark"
         sticky="top"
         className="py-3"
       >
         <Container>
-          <Navbar.Brand as={Link} to="/">
+          <Navbar.Brand as={Link} to="/home">
             Film Magic
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -38,11 +38,19 @@ const CustomNavbar: React.FC = () => {
                   Top Rated Series
                 </NavDropdown.Item>
               </NavDropdown>
+              <NavDropdown title="My List" id="basic-nav-dropdown">
+                <NavDropdown.Item as={Link} to="/my-list/movie">
+                  My Movie List
+                </NavDropdown.Item>
+                {/*   <NavDropdown.Item as={Link} to="/tv-series/top-rated">
+                  Top Rated Series
+                </NavDropdown.Item> */}
+              </NavDropdown>
             </Nav>
             <Nav className="ms-auto">
-              <Nav.Link as={Link} to="/" active>
+             {/*  <Nav.Link as={Link} to="/" active>
                 Home
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link as={Link} to="/link">
                 About
               </Nav.Link>

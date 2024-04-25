@@ -16,13 +16,13 @@ function TeamSection() {
   const [modalShow4, setModalShow4] = React.useState(false);
   return (
     <div>
-      <section id="team-generic">
+      <section id="team" className="generic">
         <Container>
           <h2 className="display-5 text-danger mb-5">THE TEAM</h2>
         </Container>
         <Container fluid>
           <Row>
-            <Col className="p-0">
+            <Col sm="6" lg="3" className="p-0">
               <div className="d-grid bg-danger py-5">
                 <Button
                   className="rounded-0"
@@ -37,7 +37,7 @@ function TeamSection() {
                 />
               </div>
             </Col>
-            <Col className="p-0">
+            <Col sm="6" lg="3" className="p-0">
               <div className="d-grid bg-warning py-5">
                 <Button
                   className="rounded-0"
@@ -52,7 +52,7 @@ function TeamSection() {
                 />
               </div>
             </Col>
-            <Col className="p-0">
+            <Col sm="6" lg="3" className="p-0">
               <div className="d-grid bg-success py-5">
                 <Button
                   className="rounded-0"
@@ -67,7 +67,7 @@ function TeamSection() {
                 />
               </div>
             </Col>
-            <Col className="p-0">
+            <Col sm="6" lg="3" className="p-0">
               <div className="d-grid bg-primary py-5">
                 <Button
                   className="rounded-0"

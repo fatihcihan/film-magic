@@ -46,7 +46,7 @@ const TopRatedMovies: React.FC = (): JSX.Element => {
   return (
     <Container>
       <Search onSearch={handleSearch} />
-      <Row lg={4}>
+      <Row lg={9}>
         {filteredMovies &&
           filteredMovies.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />

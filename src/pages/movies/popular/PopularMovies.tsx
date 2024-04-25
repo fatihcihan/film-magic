@@ -2,10 +2,10 @@ import axios, { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-// import "./Popular.css";
 import { Movie } from "../../../types/Movie";
 import Search from "../../../components/Search/Search";
 import MovieCard from "../../../components/MovieCard/MovieCard";
+import { Col } from "react-bootstrap";
 
 const PopularMovies: React.FC = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
@@ -48,7 +48,7 @@ const PopularMovies: React.FC = (): JSX.Element => {
   return (
     <Container>
       <Search onSearch={handleSearch} />
-      <Row lg={4}>
+      <Row md={9}>
         {filteredMovies &&
           filteredMovies.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />

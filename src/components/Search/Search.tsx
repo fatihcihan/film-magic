@@ -8,7 +8,6 @@ const Search: React.FC<{ onSearch: (searchValue: string) => void }> = ({
 
   const handleSearch = (event: any) => {
     const { value } = event.target;
-    console.log(value);
     setSearchInput(value);
     onSearch(value);
   };
@@ -18,7 +17,6 @@ const Search: React.FC<{ onSearch: (searchValue: string) => void }> = ({
   };
 
   return (
-    <Container>
       <Form onSubmit={handleSubmit}>
         <InputGroup style={{ marginTop: "1rem", marginBottom: "1rem" }}>
           <Form.Control
@@ -29,7 +27,6 @@ const Search: React.FC<{ onSearch: (searchValue: string) => void }> = ({
           />
         </InputGroup>
       </Form>
-    </Container>
   );
 };
 
