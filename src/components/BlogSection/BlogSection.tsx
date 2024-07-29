@@ -7,6 +7,7 @@ import { BsCalendar3 } from "react-icons/bs";
 import axios, { AxiosResponse } from "axios";
 import "./BlogSection.css";
 import { GoStarFill } from "react-icons/go";
+import React from "react";
 
 const BlogSection = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
@@ -50,7 +51,6 @@ const BlogSection = (): JSX.Element => {
         <h2 className="display-5 text-danger mb-5">WHAT WE SAY?</h2>
         <Row>
           {movies?.slice(0, 3).map((movie, index) => (
-            <>
               <Col key={index} md="6" lg="4">
                 <Card className="bg-light border-0">
                   <Card.Img
@@ -78,7 +78,6 @@ const BlogSection = (): JSX.Element => {
                   </Card.Body>
                 </Card>
               </Col>
-            </>
           ))}
           <Col md="6" lg="4" className="d-none d-md-block d-lg-none">
             <Card className="bg-light border-0">
