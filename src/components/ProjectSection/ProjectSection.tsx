@@ -1,14 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row, Image, Collapse } from "react-bootstrap";
 import { HiChevronDoubleDown } from "react-icons/hi";
 import CloseButton from "react-bootstrap/CloseButton";
 import "./ProjectSection.css";
+import axios, { AxiosResponse } from "axios";
+import { MovieGenre } from "../../types/MovieGenre";
+import { Movie } from "../../types/Movie";
 
 const ProjectSection = () => {
-  const [open1, setOpen1] = useState(false);
-  const [open2, setOpen2] = useState(false);
-  const [open3, setOpen3] = useState(false);
-  const [open4, setOpen4] = useState(false);
+
+  const [openGenre, setOpenGenre] = useState<number | null>(null);
+  const [genres, setGenres] = useState<MovieGenre[] | null>([]);
+  const accessToken = process.env.REACT_APP_API_ACCESS_TOKEN;
+
+  const imageUrls = [
+    "https://images.unsplash.com/photo-1618945524163-32451704cbb8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/reserve/91JuTaUSKaMh2yjB1C4A_IMG_9284.jpg?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1634912314611-768095c24419?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1606145166375-714fe7f24261?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ];
+
+  const fetchGenres = async (): Promise<void> => {
+    try {
+      const response: AxiosResponse<any> = await axios.get(
+        `https://api.themoviedb.org/3/genre/movie/list?language=en`,
+        {
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      const genres: MovieGenre[] = response.data.genres;
+      setGenres(genres);
+      console.log(genres, "genres");
+    } catch (err) {
+      console.log("error");
+    }
+  };
+
+  useEffect(() => {
+    fetchGenres();
+  }, []);
+
   return (
     <section id="latest" className="generic">
       <Container>
@@ -16,7 +50,27 @@ const ProjectSection = () => {
       </Container>
       <Container fluid>
         <Row>
-          <Col xl="3" sm="6" className="p-0">
+          {genres?.slice(0, 4).map((genre, index) => (
+            <Col xl="3" sm="6" className="p-0" key={genre.id}>
+              <div className="latest-item">
+                <Button
+                  onClick={() =>
+                    setOpenGenre(openGenre === genre.id ? null : genre.id)
+                  }
+                  aria-controls="example-collapse-text"
+                  aria-expanded={openGenre === genre.id}
+                  className="p-0 rounded-0 border-0"
+                >
+                  <Image src={imageUrls[index % imageUrls.length]} fluid />
+                  <div className="overlay d-flex align-items-center justify-content-center">
+                    <HiChevronDoubleDown className="chevron-icon" />
+                  </div>
+                </Button>
+              </div>
+            </Col>
+          ))}
+
+          {/*  <Col xl="3" sm="6" className="p-0">
             <div className="latest-item">
               <Button
                 onClick={() => setOpen1(!open1)}
@@ -90,11 +144,30 @@ const ProjectSection = () => {
                 </div>
               </Button>
             </div>
-          </Col>
+          </Col> */}
         </Row>
 
         <Row>
-          <Collapse in={open1}>
+          {genres?.map((genre) => (
+            <Collapse in={openGenre === genre.id} key={genre.id}>
+              <Container fluid className="p-0 mt-5">
+                <Row className="p-0">
+                  <Col sm="6" xl="3">
+                    <CloseButton onClick={() => setOpenGenre(null)} />
+                    <dl className="row ps-5">
+                      <dt className="col-12">
+                        <span className="text-danger lead">{genre.name}</span>
+                      </dt>                     
+                      {/* Ek bilgi yerleştirilebilir */}
+                    </dl>
+                  </Col>
+                  {/* Ek görseller ya da bilgiler yerleştirilebilir */}
+                </Row>
+              </Container>
+            </Collapse>
+          ))}
+
+          {/*  <Collapse in={open1}>
             <Container fluid className="p-0 mt-5">
               <Row className="p-0" shadow="true">
                 <Col sm="6" xl="3">
@@ -248,7 +321,7 @@ const ProjectSection = () => {
                 </Col>
               </Row>
             </Container>
-          </Collapse>
+          </Collapse> */}
         </Row>
       </Container>
     </section>
