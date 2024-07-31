@@ -35,7 +35,6 @@ const BlogSection = (): JSX.Element => {
       });
       setMovies(movies);
       setFilteredMovies(movies);
-      console.log(movies);
     } catch (err) {
       console.log("error");
     }
