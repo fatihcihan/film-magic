@@ -92,8 +92,6 @@ function TeamSection() {
 export default TeamSection;
 
 function TeamMemberModal1(props: any) {
-  console.log(props, "props");
-
   return (
     <Modal
       {...props}
@@ -146,8 +144,6 @@ function TeamMemberModal1(props: any) {
 }
 
 function TeamMemberModal2(props: any) {
-  console.log(props, "props");
-
   return (
     <Modal
       {...props}
@@ -200,8 +196,6 @@ function TeamMemberModal2(props: any) {
 }
 
 function TeamMemberModal3(props: any) {
-  console.log(props, "props");
-
   return (
     <Modal
       {...props}
@@ -254,8 +248,6 @@ function TeamMemberModal3(props: any) {
 }
 
 function TeamMemberModal4(props: any) {
-  console.log(props, "props");
-
   return (
     <Modal
       {...props}
