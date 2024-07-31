@@ -14,3 +14,9 @@
   color: white;
 }
  
+.dropdown-item:active,
+.dropdown-item:focus {
+  background-color: #dc3545;
+  color: white;
+  outline: none; 
+}
