@@ -7,7 +7,6 @@ import axios, { AxiosResponse } from "axios";
 const AboutUsSection = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
   const imageUrl = process.env.REACT_APP_IMAGE_URL;
-  const selectedMovies = movies?.slice(0, 2);
 
   const accessToken = process.env.REACT_APP_API_ACCESS_TOKEN;
 
@@ -22,11 +21,9 @@ const AboutUsSection = (): JSX.Element => {
           },
         }
       );
-      console.log(response.data.results, "reseses");
       const movies: Movie[] = response.data.results;
       setMovies(movies);
     } catch (error) {
-      console.log(error, "err");
     }
   };
 
