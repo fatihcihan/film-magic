@@ -64,6 +64,7 @@ const routes = createBrowserRouter([
       { path: "top-rated", element: <TopRatedMovies /> },
       { path: "popular/details/:id", element: <MovieDetails /> },
       { path: "top-rated/details/:id", element: <MovieDetails /> },
+      { path: "details/:id", element: <MovieDetails /> },
     ],
   },
   {
