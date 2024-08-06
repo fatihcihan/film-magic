@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Row, Image, Collapse } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Row,
+  Image,
+  Collapse,
+  ListGroup,
+} from "react-bootstrap";
 import { HiChevronDoubleDown } from "react-icons/hi";
 import CloseButton from "react-bootstrap/CloseButton";
 import "./ProjectSection.css";
 import axios, { AxiosResponse } from "axios";
 import { MovieGenre } from "../../types/MovieGenre";
 import { Movie } from "../../types/Movie";
+import { Link } from "react-router-dom";
 
 const ProjectSection = () => {
   const [openGenre, setOpenGenre] = useState<number | null>(null);
@@ -21,7 +30,7 @@ const ProjectSection = () => {
     "https://images.unsplash.com/photo-1606145166375-714fe7f24261?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
 
-  const fetchGenres = async (): Promise<void> => {
+  const fetchMovieGenres = async (): Promise<void> => {
     try {
       const response: AxiosResponse<any> = await axios.get(
         `https://api.themoviedb.org/3/genre/movie/list?language=en`,
@@ -67,7 +76,7 @@ const ProjectSection = () => {
   }, [openGenre]);
 
   useEffect(() => {
-    fetchGenres();
+    fetchMovieGenres();
   }, []);
 
   return (
@@ -98,28 +107,32 @@ const ProjectSection = () => {
           ))}
         </Row>
 
-        <Row>
+        <Row className="d-flex flex-wrap">
           {genres?.map((genre) => (
             <Collapse in={openGenre === genre.id} key={genre.id}>
               <Container fluid className="p-0 mt-5">
                 <Row className="p-0">
-                  <Col sm="6" xl="3">
+                  <Col sm="6" xl="3" className="d-flex flex-column">
                     <CloseButton
                       onClick={() => {
                         setOpenGenre(null);
                       }}
                     />
-                    <dl className="row ps-5">
+                    <dl className="row ps-5 flex-grow-1 d-flex flex-column">
                       <dt className="col-12">
-                        <span className="text-danger lead">{genre.name}</span>
+                        <h5 className="text-danger text-uppercase text-center">
+                          {genre.name}
+                        </h5>
                       </dt>
-                      <dd className="col-12">
+                      <dd className="col-12 flex-grow-1">
                         {movies ? (
-                          <ul>
+                          <ListGroup>
                             {movies.map((movie) => (
-                              <li key={movie.id}>{movie.title}</li>
+                              <ListGroup.Item key={movie.id}>
+                                {movie.title}
+                              </ListGroup.Item>
                             ))}
-                          </ul>
+                          </ListGroup>
                         ) : (
                           <p>Loading...</p>
                         )}
@@ -128,12 +141,19 @@ const ProjectSection = () => {
                   </Col>
                   {movies ? (
                     movies.map((movie) => (
-                      <Col sm="6" xl="3" className="p-0">
-                        <Image
-                          key={movie.id}
-                          src={`${imageUrl}/${movie.backdrop_path}`}
-                          fluid
-                        />
+                      <Col
+                        sm="6"
+                        xl="3"
+                        className="p-0 d-flex align-items-center"
+                      >
+                        <Link to={`/movies/details/${movie.id}`}>
+                          <Image
+                            key={movie.id}
+                            src={`${imageUrl}/${movie.backdrop_path}`}
+                            fluid
+                            style={{ cursor: "pointer" }}
+                          />
+                        </Link>
                       </Col>
                     ))
                   ) : (
