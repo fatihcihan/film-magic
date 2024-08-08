@@ -7,7 +7,9 @@ import {
   Image,
   Collapse,
   ListGroup,
+  Card,
 } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
 import { HiChevronDoubleDown } from "react-icons/hi";
 import CloseButton from "react-bootstrap/CloseButton";
 import "./ProjectSection.css";
@@ -134,7 +136,7 @@ const ProjectSection = () => {
                             ))}
                           </ListGroup>
                         ) : (
-                          <p>Loading...</p>
+                          <Spinner animation="border" variant="danger" />
                         )}
                       </dd>
                     </dl>
@@ -147,17 +149,21 @@ const ProjectSection = () => {
                         className="p-0 d-flex align-items-center"
                       >
                         <Link to={`/movies/details/${movie.id}`}>
-                          <Image
-                            key={movie.id}
-                            src={`${imageUrl}/${movie.backdrop_path}`}
-                            fluid
-                            style={{ cursor: "pointer" }}
-                          />
+                          <Card className="card-img-overlay-container border-0">
+                            <Card.Img
+                              src={`${imageUrl}/${movie.backdrop_path}`}
+                              alt={movie.title}
+                              className="card-img"
+                            />
+                            <Card.ImgOverlay className="card-overlay">
+                           Go To Movie Details
+                            </Card.ImgOverlay>
+                          </Card>
                         </Link>
                       </Col>
                     ))
                   ) : (
-                    <p>Loading...</p>
+                    <Spinner animation="border" variant="danger" />
                   )}
                 </Row>
               </Container>
