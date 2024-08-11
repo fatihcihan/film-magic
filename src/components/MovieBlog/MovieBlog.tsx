@@ -5,11 +5,11 @@ import { MdOutlineInsertComment } from "react-icons/md";
 import { Movie } from "../../types/Movie";
 import { BsCalendar3 } from "react-icons/bs";
 import axios, { AxiosResponse } from "axios";
-import "./BlogSection.css";
+import "./MovieBlog.css";
 import { GoStarFill } from "react-icons/go";
 import React from "react";
 
-const BlogSection = (): JSX.Element => {
+const MovieBlog = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
   const [filteredMovies, setFilteredMovies] = useState<Movie[] | undefined>([]);
 
@@ -47,7 +47,7 @@ const BlogSection = (): JSX.Element => {
   return (
     <section id="blog" className="generic">
       <Container>
-        <h2 className="display-5 text-danger mb-5">WHAT WE SAY?</h2>
+        <h2 className="display-5 text-danger mb-5">MOVIE INSIGHTS</h2>
         <Row>
           {movies?.slice(0, 3).map((movie, index) => (
               <Col key={index} md="6" lg="4">
@@ -117,7 +117,7 @@ const BlogSection = (): JSX.Element => {
   );
 };
 
-export default BlogSection;
+export default MovieBlog;
 
 {
   /*  <Col md="6" lg="4">
