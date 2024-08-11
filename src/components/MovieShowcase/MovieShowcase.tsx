@@ -11,14 +11,16 @@ import {
 } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
 import { HiChevronDoubleDown } from "react-icons/hi";
+import { BiInfoCircle } from "react-icons/bi";
+import { FaSearch } from "react-icons/fa";
 import CloseButton from "react-bootstrap/CloseButton";
-import "./ProjectSection.css";
+import "./MovieShowcase.css";
 import axios, { AxiosResponse } from "axios";
 import { MovieGenre } from "../../types/MovieGenre";
 import { Movie } from "../../types/Movie";
 import { Link } from "react-router-dom";
 
-const ProjectSection = () => {
+const MovieShowcase = () => {
   const [openGenre, setOpenGenre] = useState<number | null>(null);
   const [genres, setGenres] = useState<MovieGenre[] | null>([]);
   const [movies, setMovies] = useState<Movie[] | null>(null);
@@ -84,7 +86,7 @@ const ProjectSection = () => {
   return (
     <section id="latest" className="generic">
       <Container>
-        <h2 className="display-5 text-danger mb-4">WHAT WE DO?</h2>
+        <h2 className="display-5 text-danger mb-4">MOVIE SHOWCASE</h2>
       </Container>
       <Container fluid>
         <Row>
@@ -130,7 +132,10 @@ const ProjectSection = () => {
                         {movies ? (
                           <ListGroup>
                             {movies.map((movie) => (
-                              <ListGroup.Item key={movie.id}>
+                              <ListGroup.Item
+                                key={movie.id}
+                                className="list-group-item-hover"
+                              >
                                 {movie.title}
                               </ListGroup.Item>
                             ))}
@@ -156,7 +161,7 @@ const ProjectSection = () => {
                               className="card-img"
                             />
                             <Card.ImgOverlay className="card-overlay">
-                           Go To Movie Details
+                              <FaSearch />
                             </Card.ImgOverlay>
                           </Card>
                         </Link>
@@ -175,4 +180,4 @@ const ProjectSection = () => {
   );
 };
 
-export default ProjectSection;
+export default MovieShowcase;

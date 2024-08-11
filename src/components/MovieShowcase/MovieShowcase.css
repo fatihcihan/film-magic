@@ -66,3 +66,8 @@ section#latest .overlay .chevron-icon {
 .card-img-overlay-container:hover .card-overlay {
   opacity: 1;
 }
+
+.list-group-item-hover:hover {
+  background-color: #f59292;
+  transition: background-color 0.3s ease;
+}
