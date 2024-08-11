@@ -68,7 +68,7 @@ const TeamSection = () => {
     <div>
       <section id="team" className="generic">
         <Container>
-          <h2 className="display-5 text-danger mb-5">THE TEAM</h2>
+          <h2 className="display-5 text-danger mb-5">GENRE SPOTLIGHT</h2>
         </Container>
         <Container fluid>
           <Row>
