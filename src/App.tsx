@@ -9,12 +9,12 @@ import PopularSeries from "./pages/tv-series/popular/PopularSeries";
 import TopRatedSeries from "./pages/tv-series/top-rated/TopRatedSeries";
 import { MyMovieList } from "./components/MyMovieList/MyMovieList";
 import HeroSection from "./components/HeroSection/HeroSection";
-import AboutUsSection from "./components/AboutUsSection/AboutUsSection";
-import ProjectSection from "./components/ProjectSection/ProjectSection";
-import BlogSection from "./components/BlogSection/BlogSection";
+import MoviePreviews from "./components/MoviePreviews/MoviePreviews";
+import MovieShowcase from "./components/MovieShowcase/MovieShowcase";
+import MovieBlog from "./components/MovieBlog/MovieBlog";
 import DividerSection from "./components/DividerSection/DividerSection";
 import ApproachSection from "./components/ApproachSection/ApproachSection";
-import TeamSection from "./components/TeamSection/TeamSection";
+import DiscoverGenres from "./components/DiscoverGenres/DiscoverGenres";
 import ContactSection from "./components/ContactSection/ContactSection";
 import MovieDetails from "./pages/details/movie-detail/MovieDetails";
 import SerieDetails from "./pages/details/serie-detail/SerieDetails";
@@ -29,12 +29,12 @@ const routes = createBrowserRouter([
         element: (
           <>
             <HeroSection />
-            <ProjectSection />
-            <AboutUsSection />
-            <BlogSection />
+            <MovieShowcase />
+            <MoviePreviews />
+            <MovieBlog />
             <DividerSection />
             <ApproachSection />
-            <TeamSection />
+            <DiscoverGenres />
             <ContactSection />
           </>
         ),
@@ -44,12 +44,12 @@ const routes = createBrowserRouter([
         element: (
           <>
             <HeroSection />
-            <ProjectSection />
-            <AboutUsSection />
-            <BlogSection />
+            <MovieShowcase />
+            <MoviePreviews />
+            <MovieBlog />
             <DividerSection />
             <ApproachSection />
-            <TeamSection />
+            <DiscoverGenres />
             <ContactSection />
           </>
         ),
