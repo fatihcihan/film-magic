@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Image } from "react-bootstrap";
-import "./AboutUsSection.css";
+import "./MoviePreviews.css";
 import { Movie } from "../../types/Movie";
 import axios, { AxiosResponse } from "axios";
 
-const AboutUsSection = (): JSX.Element => {
+const MoviePreviews = (): JSX.Element => {
   const [movies, setMovies] = useState<Movie[] | null>([]);
   const imageUrl = process.env.REACT_APP_IMAGE_URL;
 
@@ -79,4 +79,4 @@ const AboutUsSection = (): JSX.Element => {
   );
 };
 
-export default AboutUsSection;
+export default MoviePreviews;
