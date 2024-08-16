@@ -18,6 +18,7 @@ import DiscoverGenres from "./components/DiscoverGenres/DiscoverGenres";
 import ContactSection from "./components/ContactSection/ContactSection";
 import MovieDetails from "./pages/details/movie-detail/MovieDetails";
 import SerieDetails from "./pages/details/serie-detail/SerieDetails";
+import ScrollToTopButton from "./components/ScrollTopToButton/ScrollTopToButton";
 
 const routes = createBrowserRouter([
   {
@@ -36,6 +37,7 @@ const routes = createBrowserRouter([
             <ApproachSection />
             <DiscoverGenres />
             <ContactSection />
+            <ScrollToTopButton />
           </>
         ),
       },
@@ -51,6 +53,7 @@ const routes = createBrowserRouter([
             <ApproachSection />
             <DiscoverGenres />
             <ContactSection />
+            <ScrollToTopButton />
           </>
         ),
       },
@@ -75,6 +78,7 @@ const routes = createBrowserRouter([
       { path: "top-rated", element: <TopRatedSeries /> },
       { path: "popular/details/:id", element: <SerieDetails /> },
       { path: "top-rated/details/:id", element: <SerieDetails /> },
+      { path: "details/:id", element: <SerieDetails /> },
     ],
   },
   {
