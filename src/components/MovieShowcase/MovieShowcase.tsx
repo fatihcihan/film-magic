@@ -116,7 +116,7 @@ const MovieShowcase = () => {
             <Collapse in={openGenre === genre.id} key={genre.id}>
               <Container fluid className="p-0 mt-5">
                 <Row className="p-0">
-                  <Col sm="6" xl="3" className="d-flex flex-column">
+                  <Col key={genre.id} sm="6" xl="3" className="d-flex flex-column">
                     <CloseButton
                       onClick={() => {
                         setOpenGenre(null);
@@ -149,6 +149,7 @@ const MovieShowcase = () => {
                   {movies ? (
                     movies.map((movie) => (
                       <Col
+                      key={movie.id}
                         sm="6"
                         xl="3"
                         className="p-0 d-flex align-items-center"
