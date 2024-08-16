@@ -2,14 +2,18 @@ import Container from "react-bootstrap/Container";
 import "./CustomNavbar.css";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { NavDropdown } from "react-bootstrap";
+import { Link as ScrollLink } from "react-scroll";
 
 const CustomNavbar: React.FC = (): JSX.Element => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/home";
+  
   return (
     <>
       <Navbar
-        bg="danger"
+        bg="dark"
         expand="md"
         variant="dark"
         sticky="top"
@@ -42,21 +46,22 @@ const CustomNavbar: React.FC = (): JSX.Element => {
                 <NavDropdown.Item as={Link} to="/my-list/movie">
                   My Movie List
                 </NavDropdown.Item>
-                {/*   <NavDropdown.Item as={Link} to="/tv-series/top-rated">
-                  Top Rated Series
-                </NavDropdown.Item> */}
               </NavDropdown>
             </Nav>
             <Nav className="ms-auto">
-             {/*  <Nav.Link as={Link} to="/" active>
-                Home
-              </Nav.Link> */}
-              <Nav.Link as={Link} to="/link">
-                About
-              </Nav.Link>
-              <Nav.Link as={Link} to="/link">
-                Contact
-              </Nav.Link>
+              {isHomePage && (
+                <Nav.Link as="button">
+                  <ScrollLink
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    Contact
+                  </ScrollLink>
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
