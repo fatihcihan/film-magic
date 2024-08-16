@@ -1,7 +1,7 @@
 import { MovieGenre } from "./MovieGenre";
 
 export class Serie {
-    id!: string;
+    id!: number;
     name!: string;
     title!: string;
     tagline!: string;
