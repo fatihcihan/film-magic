@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Search from "../../../components/Search/Search";
 import { Serie } from "../../../types/Serie";
 import SerieCard from "../../../components/SerieCard/SerieCard";
+import { Col } from "react-bootstrap";
 
 const PopularSeries: React.FC = (): JSX.Element => {
   const [series, setSeries] = useState<Serie[] | null>([]);
@@ -45,10 +46,12 @@ const PopularSeries: React.FC = (): JSX.Element => {
   return (
     <Container>
       <Search onSearch={handleSearch} />
-      <Row lg={4}>
+      <Row xs={1} sm={2} md={3} lg={4}>
         {filteredSeries &&
           filteredSeries.map((serie) => (
-            <SerieCard key={serie.id} serie={serie} />
+            <Col key={serie.id}>
+              <SerieCard key={serie.id} serie={serie} />
+            </Col>
           ))}
       </Row>
     </Container>
