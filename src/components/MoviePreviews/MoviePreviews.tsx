@@ -32,7 +32,7 @@ const MoviePreviews = (): JSX.Element => {
   }, []);
 
   return (
-    <section className="generic">
+    <section id="movie-previews" className="generic">
       <Container>
         <h2 className="display-5 text-danger mb-4">UPCOMING</h2>
         {movies?.slice(0, 2).map((movie, index) => (
