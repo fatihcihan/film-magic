@@ -1,6 +1,6 @@
 import React from "react";
 import { Serie } from "../../types/Serie";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { GoStarFill } from "react-icons/go";
 import "./SerieCard.css";
@@ -18,11 +18,9 @@ function SerieCard(props: { serie: Serie }) {
     } else {
       return (
         <>
-          <br />
           <div className="overview-warning">
             <ImWarning />
             <b> No overview available. </b>
-            <br />
           </div>
         </>
       );
@@ -30,28 +28,28 @@ function SerieCard(props: { serie: Serie }) {
   };
 
   return (
-    <>
-      <Card className="bg-light border-0 col-sm-6 col-lg-3">
-        <Card.Img variant="top" src={`${imageUrl}/${serie.poster_path}`} />
-        <Card.Body className="d-flex flex-column">
-          <Card.Title className="mb-4">{serie.name}</Card.Title>
-          <Card.Text className="info">{shortenOverview(serie.overview, 100)}</Card.Text>
-          <div className="d-flex justify-content-between">
+    <Container className="mt-2">
+      <Row className="g-4">
+        <Col key={serie.id}>
+          <Card className="test-serie-card">
             <Card.Link as={Link} to={`details/${serie.id}`}>
-              <Button variant="outline-primary" size="lg">
-                Details
-              </Button>
+              <Card.Img
+                variant="top"
+                src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`}
+                alt={serie.title}
+                className="test-serie-card-img"
+              />
+              <Card.Body className="test-serie-card-body">
+                <Card.Title className="test-serie-card-title">
+                  <h1 className="test-serie-card-title">{serie.name}</h1>
+                  <p className="test-serie-card-subtitle">{serie.overview}</p>
+                </Card.Title>
+              </Card.Body>
             </Card.Link>
-            <Card.Title className="p-2">
-              <span>
-                <GoStarFill className="gold-star" />
-                {serie.vote_average.toFixed(1)}
-              </span>
-            </Card.Title>
-          </div>
-        </Card.Body>
-      </Card>
-    </>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
