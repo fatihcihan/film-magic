@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Serie } from "../../../types/Serie";
 import axios, { AxiosResponse } from "axios";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Search from "../../../components/Search/Search";
 import SerieCard from "../../../components/SerieCard/SerieCard";
 
@@ -44,10 +44,12 @@ const TopRatedSeries: React.FC = (): JSX.Element => {
   return (
     <Container>
       <Search onSearch={handleSearch} />
-      <Row lg={9}>
+      <Row xs={1} sm={2} md={3} lg={4}>
         {filteredSeries &&
           filteredSeries.map((serie) => (
-            <SerieCard key={serie.id} serie={serie} />
+            <Col key={serie.id}>
+              <SerieCard key={serie.id} serie={serie} />
+            </Col>
           ))}
       </Row>
     </Container>
