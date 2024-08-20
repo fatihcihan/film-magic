@@ -1,18 +1,18 @@
-.test-serie-card {
+.related-serie-card {
   border-radius: 20px;
   overflow: hidden;
   border: 8px solid #fff;
   position: relative;
 }
 
-.test-serie-card-img {
+.related-serie-card-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   border-radius: 15px;
 }
 
-.test-serie-card-body {
+.related-serie-card-body {
   width: 100%;
   height: 100%;
   top: 0;
@@ -28,19 +28,26 @@
   transition: 2s;
 }
 
-.test-serie-card:hover .test-serie-card-body {
+.related-serie-card:hover .related-serie-card-body {
   right: 0;
 }
 
-.test-serie-card-title {
+.related-serie-card-title {
   text-transform: uppercase;
   font-size: 17px;
   font-weight: 500;
 }
 
-.test-serie-card-subtitle {
+.related-serie-card-subtitle {
   text-transform: capitalize;
   font-size: 13px;
   font-weight: 300;
+}
+
+.related-serie-card-info {
+  font-size: 15px;
+  line-height: 25px;
+  margin: 40px 0;
+  font-weight: 400;
 }
 

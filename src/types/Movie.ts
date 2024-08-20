@@ -1,7 +1,7 @@
 import { MovieGenre } from "./MovieGenre";
 
 export class Movie {
-    id!: string;
+    id!: number;
     title!: string;
     overview!: string;
     poster_path!: string;

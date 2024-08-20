@@ -2,16 +2,29 @@
   color: rgb(255, 215, 0);
 }
 
-.info{
+.movie-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card-body {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card-body{
-    display: flex;
-    height: 100%;
-    flex-direction: column;
+.movie-card-text {
+  height: 4.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.card-text{
-    flex-grow: 1;
+.movie-card-title {
+  height: 3rem;
+  overflow: hidden;
 }
