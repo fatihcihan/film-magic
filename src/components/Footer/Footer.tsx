@@ -5,7 +5,7 @@ const Footer: React.FC = (): JSX.Element => {
   return (
     <footer>
       <Container fluid className="bg-dark text-center py-4 lead text-light">
-        NO &copy; {currentYear} FILM-MAGIC INC
+        NO &copy; {currentYear} FILM-MAGIC INCS
       </Container>
     </footer>
   );
